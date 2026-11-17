@@ -1,0 +1,27 @@
+{
+  "/": {
+    "title": "Web Divider | Digital Marketing Agency for Growth-Focused Brands",
+    "description": "Web Divider is a creative digital marketing agency helping startups, SMBs, e-commerce and personal brands grow through strategy, creativity and technology.",
+    "component": "Home"
+  },
+  "/about": {
+    "title": "About Us | Web Divider Digital Marketing Agency",
+    "description": "Get to know Web Divider: a creative digital marketing agency combining creativity, strategy and technology to help brands in the US, UK, Canada and India grow.",
+    "component": "About"
+  },
+  "/services": {
+    "title": "Services | Web Divider Digital Marketing Agency",
+    "description": "Social media marketing, website design and development, SEO, content creation, paid advertising and branding from Web Divider, a creative digital marketing agency.",
+    "component": "Services"
+  },
+  "/work": {
+    "title": "Our Work | Web Divider Concept Portfolio",
+    "description": "Explore Web Divider's concept portfolio: website design, branding, social media, video content and marketing campaign concepts.",
+    "component": "Work"
+  },
+  "/contact": {
+    "title": "Contact Us | Start Your Project with Web Divider",
+    "description": "Tell Web Divider about your project. Share your goals, services needed, budget and timeline through our project inquiry form.",
+    "component": "Contact"
+  }
+}

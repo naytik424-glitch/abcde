@@ -1,0 +1,269 @@
+/* Global rules and animations shared by every page */
+body{margin:0;background:#05060B}
+html{scroll-behavior:smooth}
+@keyframes wdFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes wdSpin{to{transform:rotate(360deg)}}
+@keyframes wdSpinRev{to{transform:rotate(-360deg)}}
+@keyframes wdPulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.9;transform:scale(1.06)}}
+@keyframes wdShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes wdFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes wdMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes wdMenu{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@keyframes wdCube{from{transform:rotateX(-22deg) rotateY(0deg)}to{transform:rotateX(-22deg) rotateY(360deg)}}
+@keyframes wdFlow{from{background-position:0% 0}to{background-position:200% 0}}
+@keyframes wdPlate{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes wdBlink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes wdBar{from{transform:scaleX(.2)}to{transform:scaleX(1)}}
+@keyframes wdPopA{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes wdPopB{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes wdModal{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes wdFade{from{opacity:0}to{opacity:1}}
+@keyframes wdSpinFast{to{transform:rotate(360deg)}}
+@keyframes wdRing{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+
+/* Page styles, each scoped to its page so pages keep their exact original look */
+/* ---- Home (/) ---- */
+.page-home a{color:#C4B5FD}
+.page-home a:hover{color:#E9E3FF}
+.page-home *, .page-home{box-sizing:border-box}
+.page-home .wd-grad-text{background:linear-gradient(100deg,#A78BFA 0%,#7C9CFF 50%,#60A5FA 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-home .wd-nav-link{position:relative;transition:color .25s ease}
+.page-home .wd-nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:linear-gradient(90deg,#8B5CF6,#3B82F6);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.page-home .wd-nav-link:hover{color:#FFFFFF !important}
+.page-home .wd-nav-link:hover::after{transform:scaleX(1)}
+.page-home .wd-btn{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,border-color .25s ease}
+.page-home .wd-btn:hover{transform:translateY(-2px)}
+.page-home .wd-btn-primary:hover{box-shadow:0 12px 40px -8px rgba(124,92,255,.65)}
+.page-home .wd-btn-ghost:hover{border-color:rgba(167,139,250,.7) !important;background-color:rgba(139,92,246,.10) !important}
+.page-home .wd-btn .wd-arrow{transition:transform .25s ease}
+.page-home .wd-btn:hover .wd-arrow{transform:translate(3px,-3px)}
+.page-home .wd-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease,background-color .35s ease}
+.page-home .wd-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.55) !important;box-shadow:0 24px 60px -24px rgba(99,102,241,.55);background-color:rgba(20,22,48,.75) !important}
+.page-home .wd-card .wd-icon{transition:transform .35s ease,background-color .35s ease}
+.page-home .wd-card:hover .wd-icon{transform:scale(1.08) rotate(-4deg)}
+.page-home .wd-link{transition:gap .25s ease,color .25s ease}
+.page-home .wd-link:hover{gap:12px !important;color:#FFFFFF !important}
+.page-home .wd-work .wd-work-art{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.page-home .wd-work:hover .wd-work-art{transform:scale(1.06)}
+.page-home .wd-foot-link{transition:color .2s ease}
+.page-home .wd-foot-link:hover{color:#FFFFFF !important}
+.page-home .wd-float{animation:wdFloat 6s ease-in-out infinite}
+.page-home .wd-float-2{animation:wdFloat 7.5s ease-in-out infinite;animation-delay:-2s}
+.page-home .wd-spin{animation:wdSpin 28s linear infinite;transform-origin:center}
+.page-home .wd-spin-rev{animation:wdSpinRev 40s linear infinite;transform-origin:center}
+.page-home .wd-pulse{animation:wdPulse 6s ease-in-out infinite}
+.page-home .wd-shift{background-size:200% 200% !important;animation:wdShift 10s ease infinite}
+.page-home .wd-enter{animation:wdFadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.page-home .wd-d1{animation-delay:.1s}
+.page-home .wd-d2{animation-delay:.22s}
+.page-home .wd-d3{animation-delay:.34s}
+.page-home .wd-d4{animation-delay:.46s}
+.page-home .wd-marquee{animation:wdMarquee 32s linear infinite}
+.page-home .wd-menu{animation:wdMenu .3s ease both}
+@supports (animation-timeline: view()){.page-home .wd-reveal{animation:wdFadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+.page-home .wd-burger{display:none !important}
+@media (max-width: 960px){.page-home .wd-nav-links{display:none !important}.page-home .wd-nav-cta{display:none !important}.page-home .wd-burger{display:inline-flex !important}}
+@media (prefers-reduced-motion: reduce){.page-home *, .page-home, .page-home *::before, .page-home *::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+.page-home :focus-visible{outline:2px solid #A78BFA;outline-offset:3px;border-radius:8px}
+
+/* ---- About (/about) ---- */
+.page-about a{color:#C4B5FD}
+.page-about a:hover{color:#E9E3FF}
+.page-about *, .page-about{box-sizing:border-box}
+.page-about .wd-grad-text{background:linear-gradient(100deg,#A78BFA 0%,#7C9CFF 50%,#60A5FA 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-about .wd-nav-link{position:relative;transition:color .25s ease}
+.page-about .wd-nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:linear-gradient(90deg,#8B5CF6,#3B82F6);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.page-about .wd-nav-link:hover{color:#FFFFFF !important}
+.page-about .wd-nav-link:hover::after, .page-about .wd-nav-link[aria-current="page"]::after{transform:scaleX(1)}
+.page-about .wd-btn{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,border-color .25s ease}
+.page-about .wd-btn:hover{transform:translateY(-2px)}
+.page-about .wd-btn-primary:hover{box-shadow:0 12px 40px -8px rgba(124,92,255,.65)}
+.page-about .wd-btn-ghost:hover{border-color:rgba(167,139,250,.7) !important;background-color:rgba(139,92,246,.10) !important}
+.page-about .wd-btn .wd-arrow{transition:transform .25s ease}
+.page-about .wd-btn:hover .wd-arrow{transform:translate(3px,-3px)}
+.page-about .wd-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease,background-color .35s ease}
+.page-about .wd-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.55) !important;box-shadow:0 24px 60px -24px rgba(99,102,241,.55)}
+.page-about .wd-card .wd-icon{transition:transform .35s ease}
+.page-about .wd-card:hover .wd-icon{transform:scale(1.08) rotate(-4deg)}
+.page-about .wd-card .wd-num{transition:color .35s ease,opacity .35s ease}
+.page-about .wd-card:hover .wd-num{opacity:1 !important}
+.page-about .wd-foot-link{transition:color .2s ease}
+.page-about .wd-foot-link:hover{color:#FFFFFF !important}
+.page-about .wd-float{animation:wdFloat 6s ease-in-out infinite}
+.page-about .wd-float-2{animation:wdFloat 7.5s ease-in-out infinite;animation-delay:-2s}
+.page-about .wd-spin{animation:wdSpin 30s linear infinite;transform-origin:center}
+.page-about .wd-pulse{animation:wdPulse 6s ease-in-out infinite}
+.page-about .wd-shift{background-size:200% 200% !important;animation:wdShift 10s ease infinite}
+.page-about .wd-enter{animation:wdFadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.page-about .wd-d1{animation-delay:.1s}
+.page-about .wd-d2{animation-delay:.22s}
+.page-about .wd-d3{animation-delay:.34s}
+.page-about .wd-d4{animation-delay:.46s}
+.page-about .wd-menu{animation:wdMenu .3s ease both}
+.page-about .wd-cube{transform-style:preserve-3d;animation:wdCube 24s linear infinite}
+.page-about .wd-flow{background-size:200% 100% !important;animation:wdFlow 4s linear infinite}
+@supports (animation-timeline: view()){.page-about .wd-reveal{animation:wdFadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+.page-about .wd-burger{display:none !important}
+@media (max-width: 960px){.page-about .wd-nav-links{display:none !important}.page-about .wd-nav-cta{display:none !important}.page-about .wd-burger{display:inline-flex !important}}
+@media (prefers-reduced-motion: reduce){.page-about *, .page-about, .page-about *::before, .page-about *::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+.page-about :focus-visible{outline:2px solid #A78BFA;outline-offset:3px;border-radius:8px}
+
+/* ---- Services (/services) ---- */
+.page-services a{color:#C4B5FD}
+.page-services a:hover{color:#E9E3FF}
+.page-services *, .page-services{box-sizing:border-box}
+.page-services .wd-grad-text{background:linear-gradient(100deg,#A78BFA 0%,#7C9CFF 50%,#60A5FA 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-services .wd-nav-link{position:relative;transition:color .25s ease}
+.page-services .wd-nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:linear-gradient(90deg,#8B5CF6,#3B82F6);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.page-services .wd-nav-link:hover{color:#FFFFFF !important}
+.page-services .wd-nav-link:hover::after, .page-services .wd-nav-link[aria-current="page"]::after{transform:scaleX(1)}
+.page-services .wd-btn{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,border-color .25s ease}
+.page-services .wd-btn:hover{transform:translateY(-2px)}
+.page-services .wd-btn-primary:hover{box-shadow:0 12px 40px -8px rgba(124,92,255,.65)}
+.page-services .wd-btn-ghost:hover{border-color:rgba(167,139,250,.7) !important;background-color:rgba(139,92,246,.10) !important}
+.page-services .wd-btn .wd-arrow{transition:transform .25s ease}
+.page-services .wd-btn:hover .wd-arrow{transform:translate(3px,-3px)}
+.page-services .wd-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease,background-color .35s ease}
+.page-services .wd-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.55) !important;box-shadow:0 24px 60px -24px rgba(99,102,241,.55)}
+.page-services .wd-card .wd-icon{transition:transform .35s ease}
+.page-services .wd-card:hover .wd-icon{transform:scale(1.08) rotate(-4deg)}
+.page-services .wd-card .wd-num{transition:opacity .35s ease}
+.page-services .wd-card:hover .wd-num{opacity:1 !important}
+.page-services .wd-link{transition:gap .25s ease,color .25s ease}
+.page-services .wd-link:hover{gap:12px !important;color:#FFFFFF !important}
+.page-services .wd-art{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.page-services .wd-show:hover .wd-art{transform:scale(1.03)}
+.page-services .wd-faq-q{transition:background-color .25s ease,color .25s ease}
+.page-services .wd-faq-q:hover{background-color:rgba(139,92,246,0.08) !important}
+.page-services .wd-foot-link{transition:color .2s ease}
+.page-services .wd-foot-link:hover{color:#FFFFFF !important}
+.page-services .wd-float{animation:wdFloat 6s ease-in-out infinite}
+.page-services .wd-float-2{animation:wdFloat 7.5s ease-in-out infinite;animation-delay:-2s}
+.page-services .wd-spin{animation:wdSpin 30s linear infinite;transform-origin:center}
+.page-services .wd-pulse{animation:wdPulse 6s ease-in-out infinite}
+.page-services .wd-shift{background-size:200% 200% !important;animation:wdShift 10s ease infinite}
+.page-services .wd-enter{animation:wdFadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.page-services .wd-d1{animation-delay:.1s}
+.page-services .wd-d2{animation-delay:.22s}
+.page-services .wd-d3{animation-delay:.34s}
+.page-services .wd-d4{animation-delay:.46s}
+.page-services .wd-menu{animation:wdMenu .3s ease both}
+.page-services .wd-flow{background-size:200% 100% !important;animation:wdFlow 4s linear infinite}
+.page-services .wd-plate{animation:wdPlate 6s ease-in-out infinite}
+.page-services .wd-blink{animation:wdBlink 1.4s ease-in-out infinite}
+.page-services .wd-bar{transform-origin:left;animation:wdBar 2.8s ease-in-out infinite alternate}
+@supports (animation-timeline: view()){.page-services .wd-reveal{animation:wdFadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+.page-services .wd-burger{display:none !important}
+@media (max-width: 960px){.page-services .wd-nav-links{display:none !important}.page-services .wd-nav-cta{display:none !important}.page-services .wd-burger{display:inline-flex !important}}
+@media (prefers-reduced-motion: reduce){.page-services *, .page-services, .page-services *::before, .page-services *::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+.page-services :focus-visible{outline:2px solid #A78BFA;outline-offset:3px;border-radius:8px}
+
+/* ---- Work (/work) ---- */
+.page-work a{color:#C4B5FD}
+.page-work a:hover{color:#E9E3FF}
+.page-work *, .page-work{box-sizing:border-box}
+.page-work .wd-grad-text{background:linear-gradient(100deg,#A78BFA 0%,#7C9CFF 50%,#60A5FA 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-work .wd-nav-link{position:relative;transition:color .25s ease}
+.page-work .wd-nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:linear-gradient(90deg,#8B5CF6,#3B82F6);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.page-work .wd-nav-link:hover{color:#FFFFFF !important}
+.page-work .wd-nav-link:hover::after, .page-work .wd-nav-link[aria-current="page"]::after{transform:scaleX(1)}
+.page-work .wd-btn{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,border-color .25s ease}
+.page-work .wd-btn:hover{transform:translateY(-2px)}
+.page-work .wd-btn-primary:hover{box-shadow:0 12px 40px -8px rgba(124,92,255,.65)}
+.page-work .wd-btn-ghost:hover{border-color:rgba(167,139,250,.7) !important;background-color:rgba(139,92,246,.10) !important}
+.page-work .wd-btn .wd-arrow{transition:transform .25s ease}
+.page-work .wd-btn:hover .wd-arrow{transform:translate(3px,-3px)}
+.page-work .wd-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease}
+.page-work .wd-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.55) !important;box-shadow:0 24px 60px -24px rgba(99,102,241,.55)}
+.page-work .wd-card .wd-icon{transition:transform .35s ease}
+.page-work .wd-card:hover .wd-icon{transform:scale(1.08) rotate(-4deg)}
+.page-work .wd-link{transition:gap .25s ease,color .25s ease}
+.page-work .wd-link:hover{gap:12px !important;color:#FFFFFF !important}
+.page-work .wd-foot-link{transition:color .2s ease}
+.page-work .wd-foot-link:hover{color:#FFFFFF !important}
+.page-work .wd-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:dense}
+.page-work .wd-s1{grid-column:span 1}
+.page-work .wd-s2{grid-column:span 2}
+.page-work .wd-s3{grid-column:span 3}
+@media (max-width: 1024px){.page-work .wd-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-work .wd-s2, .page-work .wd-s3{grid-column:span 2}}
+@media (max-width: 680px){.page-work .wd-grid{grid-template-columns:minmax(0,1fr)}.page-work .wd-s1, .page-work .wd-s2, .page-work .wd-s3{grid-column:auto}}
+.page-work .wd-project{transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s ease,box-shadow .4s ease}
+.page-work .wd-project:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.55) !important;box-shadow:0 30px 70px -30px rgba(99,102,241,.6)}
+.page-work .wd-art-root{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.page-work .wd-project:hover .wd-art-root{transform:scale(1.06)}
+.page-work .wd-chip{transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease}
+.page-work .wd-chip:hover{border-color:rgba(167,139,250,.7) !important;color:#FFFFFF !important}
+.page-work .wd-chip.is-active{background:linear-gradient(100deg,#8B5CF6,#3B82F6) !important;border-color:transparent !important;color:#FFFFFF !important;box-shadow:0 10px 30px -10px rgba(124,92,255,.7)}
+.page-work .wd-popA{animation:wdPopA .55s cubic-bezier(.2,.7,.2,1) both}
+.page-work .wd-popB{animation:wdPopB .55s cubic-bezier(.2,.7,.2,1) both}
+.page-work .wd-float{animation:wdFloat 6s ease-in-out infinite}
+.page-work .wd-float-2{animation:wdFloat 7.5s ease-in-out infinite;animation-delay:-2s}
+.page-work .wd-spin{animation:wdSpin 30s linear infinite;transform-origin:center}
+.page-work .wd-pulse{animation:wdPulse 6s ease-in-out infinite}
+.page-work .wd-shift{background-size:200% 200% !important;animation:wdShift 10s ease infinite}
+.page-work .wd-enter{animation:wdFadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.page-work .wd-d1{animation-delay:.1s}
+.page-work .wd-d2{animation-delay:.22s}
+.page-work .wd-d3{animation-delay:.34s}
+.page-work .wd-menu{animation:wdMenu .3s ease both}
+.page-work .wd-flow{background-size:200% 100% !important;animation:wdFlow 4s linear infinite}
+.page-work .wd-overlay{animation:wdFade .3s ease both}
+.page-work .wd-dialog{animation:wdModal .45s cubic-bezier(.2,.7,.2,1) both}
+@supports (animation-timeline: view()){.page-work .wd-reveal{animation:wdFadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+.page-work .wd-burger{display:none !important}
+@media (max-width: 960px){.page-work .wd-nav-links{display:none !important}.page-work .wd-nav-cta{display:none !important}.page-work .wd-burger{display:inline-flex !important}}
+@media (prefers-reduced-motion: reduce){.page-work *, .page-work, .page-work *::before, .page-work *::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+.page-work :focus-visible{outline:2px solid #A78BFA;outline-offset:3px;border-radius:8px}
+
+/* ---- Contact (/contact) ---- */
+.page-contact a{color:#C4B5FD}
+.page-contact a:hover{color:#E9E3FF}
+.page-contact *, .page-contact{box-sizing:border-box}
+.page-contact .wd-grad-text{background:linear-gradient(100deg,#A78BFA 0%,#7C9CFF 50%,#60A5FA 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-contact .wd-nav-link{position:relative;transition:color .25s ease}
+.page-contact .wd-nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:linear-gradient(90deg,#8B5CF6,#3B82F6);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.page-contact .wd-nav-link:hover{color:#FFFFFF !important}
+.page-contact .wd-nav-link:hover::after, .page-contact .wd-nav-link[aria-current="page"]::after{transform:scaleX(1)}
+.page-contact .wd-btn{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,border-color .25s ease,opacity .25s ease}
+.page-contact .wd-btn:hover{transform:translateY(-2px)}
+.page-contact .wd-btn:disabled{cursor:progress;opacity:.8;transform:none}
+.page-contact .wd-btn-primary:hover{box-shadow:0 12px 40px -8px rgba(124,92,255,.65)}
+.page-contact .wd-btn-ghost:hover{border-color:rgba(167,139,250,.7) !important;background-color:rgba(139,92,246,.10) !important}
+.page-contact .wd-btn .wd-arrow{transition:transform .25s ease}
+.page-contact .wd-btn:hover .wd-arrow{transform:translate(3px,-3px)}
+.page-contact .wd-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease}
+.page-contact .wd-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.55) !important;box-shadow:0 24px 60px -24px rgba(99,102,241,.55)}
+.page-contact .wd-card .wd-icon{transition:transform .35s ease}
+.page-contact .wd-card:hover .wd-icon{transform:scale(1.08) rotate(-4deg)}
+.page-contact .wd-foot-link{transition:color .2s ease}
+.page-contact .wd-foot-link:hover{color:#FFFFFF !important}
+.page-contact .wd-faq-q{transition:background-color .25s ease}
+.page-contact .wd-faq-q:hover{background-color:rgba(139,92,246,0.08) !important}
+.page-contact .wd-input{transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease}
+.page-contact .wd-input::placeholder{color:#7F86A0}
+.page-contact .wd-input:hover{border-color:rgba(167,139,250,.45) !important}
+.page-contact .wd-input:focus{outline:none;border-color:#A78BFA !important;box-shadow:0 0 0 4px rgba(139,92,246,.22);background-color:rgba(20,22,48,.9) !important}
+.page-contact .wd-input.is-invalid{border-color:#F87171 !important;box-shadow:0 0 0 3px rgba(248,113,113,.15)}
+.page-contact select.wd-input option{background-color:#0B0E22;color:#EEF0FA}
+.page-contact .wd-opt{transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.page-contact .wd-opt:hover{border-color:rgba(167,139,250,.6) !important;color:#FFFFFF !important}
+.page-contact .wd-opt.is-on{background:linear-gradient(100deg,rgba(139,92,246,.35),rgba(59,130,246,.3)) !important;border-color:#A78BFA !important;color:#FFFFFF !important}
+.page-contact .wd-opt.is-on .wd-tick{background:linear-gradient(135deg,#8B5CF6,#3B82F6) !important;border-color:transparent !important}
+.page-contact .wd-combo-opt:hover, .page-contact .wd-combo-opt:focus{background-color:rgba(139,92,246,.18) !important;outline:none}
+.page-contact .wd-spinner{animation:wdSpinFast .8s linear infinite}
+.page-contact .wd-float{animation:wdFloat 6s ease-in-out infinite}
+.page-contact .wd-float-2{animation:wdFloat 7.5s ease-in-out infinite;animation-delay:-2s}
+.page-contact .wd-spin{animation:wdSpin 30s linear infinite;transform-origin:center}
+.page-contact .wd-pulse{animation:wdPulse 6s ease-in-out infinite}
+.page-contact .wd-shift{background-size:200% 200% !important;animation:wdShift 10s ease infinite}
+.page-contact .wd-enter{animation:wdFadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.page-contact .wd-d1{animation-delay:.1s}
+.page-contact .wd-d2{animation-delay:.22s}
+.page-contact .wd-d3{animation-delay:.34s}
+.page-contact .wd-menu{animation:wdMenu .3s ease both}
+.page-contact .wd-ring{animation:wdRing 2.6s ease-out infinite}
+@supports (animation-timeline: view()){.page-contact .wd-reveal{animation:wdFadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+.page-contact .wd-burger{display:none !important}
+@media (max-width: 960px){.page-contact .wd-nav-links{display:none !important}.page-contact .wd-nav-cta{display:none !important}.page-contact .wd-burger{display:inline-flex !important}}
+@media (prefers-reduced-motion: reduce){.page-contact *, .page-contact, .page-contact *::before, .page-contact *::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+.page-contact :focus-visible{outline:2px solid #A78BFA;outline-offset:3px;border-radius:8px}
